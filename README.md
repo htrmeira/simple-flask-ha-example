@@ -5,3 +5,6 @@ Esse é um light weight web service utilizado para demonstrar tolerância a falh
 Python e Flask
 
 sudo apt-get install python-flask
+
+# Running
+./simple-flask.py
