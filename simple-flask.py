@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import socket
+import datetime
 
 from flask import Flask
 
@@ -9,7 +10,8 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
 	with open("/storage/simple-flask-storage/teste.txt", "a+") as somefile:
-		towrite = ("<div>Hostname: %s</div>\n" % (socket.gethostname()) )
+		today = datetime.datetime.now()
+		towrite = ("<div>Hostname: %s - %s</div>\n" % (socket.gethostname(), today) )
 		somefile.write(towrite)
 		somefile.close()
 
